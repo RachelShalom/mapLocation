@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
+import ReactDom from 'react-dom';
+import {GoogleApiWrapper} from 'google-maps-react';
 import logo from './logo.svg';
 import './App.css';
+import MapContainer from "./mapContainer"
 
 class App extends Component {
+ 
+
   render() {
+    const location= { lat: -34.397, lng: 150.644 }
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to Tel Aviv</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div style={{width:'600px', height:"600px"}}>
+        <MapContainer google={this.props.google}/>
+        </div>
       </div>
     );
   }
 }
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4'
+})(App)
 
-export default App;
