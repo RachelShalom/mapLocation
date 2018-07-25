@@ -9,9 +9,6 @@ interact with
 
 
 ## Folder Structure
-
-After creation, your project should look like this:
-
 ```
 my-app/
   README.md
