@@ -6,10 +6,13 @@ import './App.css';
 import MapContainer from "./mapContainer"
 
 class App extends Component {
+  state={
+    locations:[]
+  }
  
 
   render() {
-    const location= { lat: -34.397, lng: 150.644 }
+    const location= { lat: 33.33280500000001, lng:  35.896244}
 
     return (
       <div className="App">
