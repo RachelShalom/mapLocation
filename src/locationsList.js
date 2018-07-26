@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+import MapContainer from "./mapContainer"
 import './locationsLists.css';
 class LocationsList extends Component {
+    state = {
+        query: ''
+      }
+
+    updateQuery = (query) => {
+        this.setState({ query: query.trim() })
+    }
+    clearQuery = () => {
+        this.setState({ query: '' })
+    }
+    
     render() {
         return (
             <div>Hi I am a LocationsList
@@ -10,7 +22,8 @@ class LocationsList extends Component {
                         className='search-contacts'
                         type='text'
                         placeholder='filter locations'
-                    //   onChange={(event) => this.updateQuery(event.target.value)}
+                        value={this.state.query}
+                        onChange={(event) => this.updateQuery(event.target.value)}
                     />
                 </div>
                 <ul className="locations-list">
@@ -24,6 +37,7 @@ class LocationsList extends Component {
                         ))
                     }
                 </ul>
+                <MapContainer locations={this.props.locations}/>
             </div>
         );
     }
