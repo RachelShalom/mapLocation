@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import MapContainer from "./mapContainer"
+import LocationsList from './locationsList';
 
 class App extends Component {
   state={
@@ -26,7 +27,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to Tel Aviv</h1>
         </header>
         <main>
+        <LocationsList locations={this.state.locations}/>
         <MapContainer locations={this.state.locations}/>
+      
         </main>
         
       </div>
