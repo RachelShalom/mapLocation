@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import MapContainer from "./mapContainer"
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
 import './locationsLists.css';
 class LocationsList extends Component {
     state = {
@@ -14,6 +16,14 @@ class LocationsList extends Component {
     }
     
     render() {
+        let showingPlaces;
+        if(this.state.query){
+            const match = new RegExp(escapeRegExp(this.state.query), 'i');
+            showingPlaces = this.props.locations.filter((location) => match.test(location.title));
+        }else{
+            showingPlaces=this.props.locations;
+        }
+        showingPlaces.sort(sortBy('name'));
         return (
             <div>Hi I am a LocationsList
 
@@ -28,7 +38,7 @@ class LocationsList extends Component {
                 </div>
                 <ul className="locations-list">
                     {
-                        this.props.locations.map((location, index) => (
+                        showingPlaces.map((location, index) => (
                             <li key={index} className='location-list-item'>
                                 <div className='location-details'>
                                     <p>{location.title}</p>
@@ -37,7 +47,7 @@ class LocationsList extends Component {
                         ))
                     }
                 </ul>
-                <MapContainer locations={this.props.locations}/>
+                <MapContainer locations={showingPlaces}/>
             </div>
         );
     }
