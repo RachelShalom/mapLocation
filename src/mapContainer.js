@@ -31,11 +31,6 @@ class MapContainer extends Component {
            }
          </Marker>)
      })
-   
-
-     
-    
-
      const Map = withScriptjs(withGoogleMap(props => 
        <GoogleMap
          defaultCenter={{lat: 32.0852999, lng: 34.78176759999999 }}
@@ -52,12 +47,12 @@ class MapContainer extends Component {
         <Map
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4"
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={ <div style={{ height: `800px`, width: '500px' }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
+          containerElement={ <div style={{ height: `850px`, width: '500px' }} /> }
+          mapElement={ <div className="mapElement" style={{ height: `100%` }} /> }
         />
       </div>
    );
-   }
+  }
 };
 export default MapContainer;
 

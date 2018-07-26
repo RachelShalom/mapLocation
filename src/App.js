@@ -25,13 +25,12 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Tel Aviv</h1>
         </header>
+        <main>
         <MapContainer locations={this.state.locations}/>
+        </main>
         
       </div>
     );
   }
 }
-// export default GoogleApiWrapper({
-//   apiKey: 'AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4'
-// })(App)
 export default App;
