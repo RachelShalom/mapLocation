@@ -1,3 +1,8 @@
-.locations-list{
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.locations-list {
     list-style: none;
 }
