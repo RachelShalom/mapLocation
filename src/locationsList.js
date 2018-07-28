@@ -17,13 +17,6 @@ class LocationsList extends Component {
     clearQuery = () => {
         this.setState({ query: '' })
     }
-    //thid function is called when user clicks the marker and open the info window
-    handleMarkerclick = (markerIndex) => {
-        console.log(markerIndex);
-        this.setState({
-            markerId: markerIndex
-        });
-    }
     //this is called when user clicks the X in the info window
       handleInfoWindowClose = () => {
         this.setState({
@@ -31,7 +24,8 @@ class LocationsList extends Component {
         });
     }
     
-    //Fetch venue information from foursquare api and chnge the state to the current marker is
+    //Fetch venue information from foursquare api and chnge the state to the current marker index. 
+    //this function is called when user click on the plave name in the list or on the place marker in the map
     fetchVenueDetails = (lat, lng, index) => {
         fetch('https://api.foursquare.com/v2/venues/search?ll=' + lat + ',' + lng
             + '&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
@@ -83,7 +77,7 @@ class LocationsList extends Component {
                 </div>
       
                 <MapContainer locations={showingPlaces} onInfoWindowClose={this.handleInfoWindowClose}
-                onMarkerClick={this.handleMarkerclick}
+                onMarkerClick={this.fetchVenueDetails}
                  markerId={this.state.markerId} venue={this.state.venue}/>
             </div>
         );
