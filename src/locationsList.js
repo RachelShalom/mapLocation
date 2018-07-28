@@ -11,7 +11,6 @@ class LocationsList extends Component {
         venue:'',
         markerId:''
       }
-
     updateQuery = (query) => {
         this.setState({ query: query.trim() })
     }
@@ -33,12 +32,13 @@ class LocationsList extends Component {
     }
     
     //Fetch venue information from foursquare api and chnge the state to the current marker is
-    getVenueDetails=(lat,lng,index)=>{fetch('https://api.foursquare.com/v2/venues/search?ll='+lat+','+lng
-    +'&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
-    .then(res=>res.json()).then(val=>{
-        console.log(val.response.venues[0].name)
-        this.setState({venue:val.response.venues[0].name, markerId:index})
-    }).catch((e)=>console.log(e));}
+    fetchVenueDetails = (lat, lng, index) => {
+        fetch('https://api.foursquare.com/v2/venues/search?ll=' + lat + ',' + lng
+            + '&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
+        .then(res => res.json()).then(val => {
+            this.setState({ venue: val.response.venues, markerId: index })
+        }).catch((e) => console.log(e));
+    }
     
     render() {
         let showingPlaces;
@@ -71,7 +71,7 @@ class LocationsList extends Component {
                         showingPlaces.map((location, index) => (
                             <li key={index} className='location-list-item' 
                             //the function get the lat lng and marker id 
-                            onClick={()=>this.getVenueDetails(location.location.lat,location.location.lng,index)}>
+                            onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
                                 <div className='location-details'>
                                     <p>{location.title}</p>
                                 </div>
@@ -79,12 +79,12 @@ class LocationsList extends Component {
                         ))
                     }
                 </ul>
-                {this.state.venue&&<p>{this.state.venue}</p>}
+                {this.state.venue&&<p>{this.state.venue[0].name}</p>}
                 </div>
       
                 <MapContainer locations={showingPlaces} onInfoWindowClose={this.handleInfoWindowClose}
                 onMarkerClick={this.handleMarkerclick}
-                 markerId={this.state.markerId}/>
+                 markerId={this.state.markerId} venue={this.state.venue}/>
             </div>
         );
     }

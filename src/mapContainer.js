@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import {withGoogleMap, GoogleMap, Marker,InfoWindow } from 'react-google-maps';
+import Venue from './venueCard';
 
 class MapContainer extends Component {
 
@@ -18,7 +19,10 @@ class MapContainer extends Component {
            {(this.props.markerId===index) &&
              <InfoWindow
                onCloseClick={() => this.props.onInfoWindowClose()}>
+               <div>
                <span>{L.title}</span>
+               <Venue venuesList={this.props.venue}/>
+               </div>
              </InfoWindow>
            }
          </Marker>
