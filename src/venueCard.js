@@ -23,6 +23,7 @@ class Venue extends Component {
             {(this.state.placeInfo.length>0)&&
              <div>   
             <p>{this.state.placeInfo[0].name}</p>
+            <p>{this.state.placeInfo[0].categories[0].name}</p>
             <p>{this.state.placeInfo[0].location.address}</p>
             <p>{this.state.placeInfo[0].contact.phone}</p>
             <a href={this.state.placeInfo[0].canonicalUrl}>click here for more details</a>
