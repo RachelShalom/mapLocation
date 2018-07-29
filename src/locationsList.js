@@ -5,6 +5,7 @@ import MapContainer from "./mapContainer"
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import './locationsLists.css';
+import { List, Input, Segment, Container } from 'semantic-ui-react'
 class LocationsList extends Component {
     state = {
         query: '',
@@ -48,38 +49,41 @@ class LocationsList extends Component {
         //this is self explanatory it is sorting the places by name using the sort-by library
         showingPlaces.sort(sortBy('name'));
         return (
+            <Container>
             <div className="container">
-                <div>
-                <div className='list-contacts-top'>
-                    <input
+                <div className="item">
+                <Segment inverted>
+                    <Input inverted
                         className='search-contacts'
                         type='text'
                         placeholder='filter locations'
                         value={this.state.query}
                         onChange={(event) => this.updateQuery(event.target.value)}
                     />
-                </div>
-                <ul className="locations-list">
+                </Segment>
+                <List divided >
                 {/*this shows the filtered results(places) to the screen*/}
                     {
                         showingPlaces.map((location, index) => (
-                            <li key={index} className='location-list-item' 
+                            <List.Item key={index} 
                             //the function get the lat lng and marker id 
                             onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
                                 <div className='location-details'>
-                                    <p>{location.title}</p>
+                                <List.Header as='a'>{location.title}</List.Header>
                                 </div>
-                            </li>
+                            </List.Item>
                         ))
                     }
-                </ul>
+                </List>
                 {this.state.venue&&<p>{this.state.venue[0].name}</p>}
                 </div>
-      
+                <div>
                 <MapContainer locations={showingPlaces} onInfoWindowClose={this.handleInfoWindowClose}
                 onMarkerClick={this.fetchVenueDetails}
                  markerId={this.state.markerId} venue={this.state.venue}/>
+                 </div>
             </div>
+            </Container>
         );
     }
 }

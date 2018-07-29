@@ -10,6 +10,7 @@
     "react-dom": "^16.4.1",
     "react-google-maps": "^9.4.5",
     "react-scripts": "1.1.4",
+    "semantic-ui-react": "^0.82.1",
     "sort-by": "^1.2.0"
   },
   "scripts": {

@@ -1,8 +1,13 @@
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .locations-list {
     list-style: none;
+}
+
+.item {
+    flex-grow: 3;
+    /* default 0 */
 }
