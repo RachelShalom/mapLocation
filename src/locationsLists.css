@@ -1,13 +1,13 @@
 .container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mapContainer {
+    float: right;
+    width: 100%;
 }
 
 .locations-list {
     list-style: none;
-}
-
-.item {
-    flex-grow: 3;
-    /* default 0 */
 }
