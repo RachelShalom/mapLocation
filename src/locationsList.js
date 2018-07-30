@@ -11,7 +11,7 @@ class LocationsList extends Component {
         query: '',
         venue:'',
         markerId:'',
-        visible: false,
+        visible: true,
         mapCenter:{lat: 32.067993, lng: 34.768596 }
       }
     updateQuery = (query) => {
@@ -59,7 +59,12 @@ class LocationsList extends Component {
         return (
          
             <div >
-                  <Button onClick={this.handleButtonClick}>Toggle visibility</Button>
+                <Header>
+                <Header.Content as='h1' >
+                   Welcome to Tel Aviv
+                </Header.Content>
+                <Button floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
+                </Header>
                 <div className="listContainer">
                 <Sidebar.Pushable as={Segment}>
                         <Sidebar

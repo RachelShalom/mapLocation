@@ -2,7 +2,9 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+.ui.header:first-child {
+    margin-top: 2%;
+}
 .mapContainer {
     float: right;
     width: 100%;
@@ -10,4 +12,23 @@
 
 .locations-list {
     list-style: none;
+}
+.ui.input {
+    width: 95%;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .ui.wide.left.sidebar, .ui.wide.right.sidebar {
+        width: 200px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .ui.basic.button, .ui.basic.buttons .button {
+        width: 30px;
+    }
 }

@@ -46,7 +46,7 @@ class MapContainer extends Component {
       <div>
         <Map
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={ <div style={{ height: `600px`, width: '100%' }} /> }
+          containerElement={ <div style={{ height: `650px`, width: '100%' }} /> }
           mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }} /> }
         />
       </div>
