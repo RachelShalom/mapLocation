@@ -53,10 +53,32 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+### offline use (instructions from react docs):
+Service workers require HTTPS, although to facilitate local testing, that policy does not apply to localhost. If your production web server does not support HTTPS, then the service worker registration will fail, but the rest of your web app will remain functional.
 
+Service workers are not currently supported in all web browsers. Service worker registration won't be attempted on browsers that lack support.
 
+The service worker is only enabled in the production environment, e.g. the output of npm run build. 
 
+If you need to test your offline-first service worker locally, build the application (using npm run build) and run a simple http server from your build directory. After running the build script, create-react-app will give instructions for one way to test your production build locally and the deployment instructions have instructions for using other methods. Be sure to always use an incognito window to avoid complications with your browser cache.
 
+###Deployment
+npm run build creates a build directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served index.html, and requests to static paths like /static/js/main.<hash>.js are served with the contents of the /static/js/main.<hash>.js file.
+
+###Static Server
+for environments using Node, the easiest way to handle this would be to install serve and let it handle the rest:
+
+npm install -g serve
+serve -s build
+
+### used API's:
+
+This app is using [foursquare API](https://foursquare.com/developers/explore#req=users%2Fself) to fetch information about locations
+
+### dependencies:
+to render the map: react-googl-maps from npm
+for io elements: semantic- ui -react
+for search and filter: escape-string-regexp, sort-by
 
 ## Supported Browsers
 
