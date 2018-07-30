@@ -1,6 +1,5 @@
-/*global google*/
+
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 import {withGoogleMap, GoogleMap, Marker,InfoWindow } from 'react-google-maps';
 import Venue from './venueCard';
 

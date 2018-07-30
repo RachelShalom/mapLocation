@@ -87,7 +87,7 @@ class LocationsList extends Component {
                             //the function get the lat lng and marker id 
                             onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
                                 <div className='location-details'>
-                                <List.Header as='a'>{location.title}</List.Header>
+                                <List.Header >{location.title}</List.Header>
                                 </div>
                             </Menu.Item>
                         ))
