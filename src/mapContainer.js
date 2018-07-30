@@ -8,8 +8,14 @@ class MapContainer extends Component {
 
   state={
     markerId: '',
-    center:{lat: 32.067993, lng: 34.768596 }
+    center:this.props.mapCenter
   }
+  //if the parent sends a new mapcenter prop then it should update the map component before it is rendered
+  componentWillReceiveProps(nextProps){
+    if(nextProps.mapCenter !== this.props.mapCenter){
+        this.setState({center:nextProps.mapCenter});
+    }
+}
 
    render() {
      let markers=  this.props.locations.map((L,index) => 

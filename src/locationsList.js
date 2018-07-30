@@ -11,7 +11,8 @@ class LocationsList extends Component {
         query: '',
         venue:'',
         markerId:'',
-        visible: false
+        visible: false,
+        mapCenter:{lat: 32.067993, lng: 34.768596 }
       }
     updateQuery = (query) => {
         this.setState({ query: query.trim() })
@@ -25,9 +26,10 @@ class LocationsList extends Component {
             markerId: ''
         });
     }
+    //thisfunction hides and make visibke the list of liocations( side bar)
     handleButtonClick = () => this.setState({ visible: !this.state.visible })
 
-  handleSidebarHide = () => this.setState({ visible: false })
+     handleSidebarHide = () => this.setState({ visible: false })
 
     
     //Fetch venue information from foursquare api and chnge the state to the current marker index. 
@@ -36,7 +38,7 @@ class LocationsList extends Component {
         fetch('https://api.foursquare.com/v2/venues/search?ll=' + lat + ',' + lng
             + '&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
         .then(res => res.json()).then(val => {
-            this.setState({ venue: val.response.venues, markerId: index })
+            this.setState({ venue: val.response.venues, markerId: index, mapCenter:{lat:lat,lng:lng} })
         }).catch((e) => console.log(e));
     }
     
@@ -94,7 +96,7 @@ class LocationsList extends Component {
                 <div className="mapContainer">
                 <MapContainer locations={showingPlaces} onInfoWindowClose={this.handleInfoWindowClose}
                 onMarkerClick={this.fetchVenueDetails}
-                 markerId={this.state.markerId} venue={this.state.venue}/>
+                 markerId={this.state.markerId} venue={this.state.venue} mapCenter={this.state.mapCenter}/>
                  </div>
             
                  </Sidebar.Pushable>
