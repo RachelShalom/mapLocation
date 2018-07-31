@@ -9,7 +9,7 @@ class App extends Component {
       {title: 'Molly Blooms', location: { lat: 32.0728099, lng: 34.7870064}},
       {title: 'Buxa Bar', location: { lat: 32.063831, lng: 34.7731644}},
       {title: 'Kuli Alma', location: {lat: 32.0622202, lng: 34.7748855}},
-      {title: 'Sputnik Bar', location: {lat: 32.0628413, lng: 34.7731424}},
+      {title: 'Sputnik Bar', location: {lat: 32.062969, lng: 34.7731424}},
       {title: 'Carmel Market', location: {lat: 32.0681957, lng: 34.7683496}},
       {title: 'The old man and the sea', location: {lat: 32.0529989,lng: 34.7500188}}
     ]

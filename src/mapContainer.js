@@ -6,7 +6,7 @@ import Venue from './venueCard';
 class MapContainer extends Component {
 
   state={
-    markerId: '',
+    markerId: this.props.markerId,
     center:this.props.mapCenter
   }
   //if the parent sends a new mapcenter prop then it should update the map component before it is rendered
@@ -14,14 +14,17 @@ class MapContainer extends Component {
     if(nextProps.mapCenter !== this.props.mapCenter){
         this.setState({center:nextProps.mapCenter});
     }
-}
+    if(nextProps.markerId !== this.props.markerId){
+        this.setState({markerId:nextProps.markerId});
+    }
+  }
 
    render() {
      let markers=  this.props.locations.map((L,index) => 
          <Marker tabindex={0} key={index} position={L.location} alt="marker" icon={((this.props.markerId===index)&&'http://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('http://maps.google.com/mapfiles/ms/icons/red-dot.png')}
          title={L.title} onClick={() => this.props.onMarkerClick(L.location.lat,L.location.lng,index)}>
          {/*if the index in the state equals to the current Marker index then  show the the info window for this marker*/}
-           {(this.props.markerId===index) &&
+           {(this.state.markerId===index) &&
              <InfoWindow
                onCloseClick={() => this.props.onInfoWindowClose()}>
                <div>
