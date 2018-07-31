@@ -63,7 +63,7 @@ class LocationsList extends Component {
                 <Header.Content as='h1' tabIndex="0">
                    Welcome to Tel Aviv
                 </Header.Content>
-                <Button aria-label="side-bar-locations" role="toggle"floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
+                <Button floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
                 </Header>
                 <div className="listContainer">
                 <Sidebar.Pushable as={Segment}>
@@ -76,6 +76,9 @@ class LocationsList extends Component {
                             vertical
                             visible={visible}
                             width='wide'
+                            aria-expanded={this.state.visible}
+                            role="complementary"
+                            aria-label="sidebar"
                         >
                           <Input inverted aria-label="filter locations"
                         className='search-places'

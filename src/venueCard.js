@@ -25,7 +25,8 @@ class Venue extends Component {
     render() {
         return (<div>
             {console.log(this.state.placeInfo)}
-            {(this.state.placeInfo.length > 0&&!typeof this.state.placeInfo === "string") &&
+            {console.log(typeof this.state.placeInfo,this.state.placeInfo.length )}
+            {(this.state.placeInfo.length ===1) &&
                 <div>
                     <p>{this.state.placeInfo[0].name}</p>
                     <p>{this.state.placeInfo[0].categories[0].name}</p>
