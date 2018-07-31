@@ -22,8 +22,12 @@ my-app/
     App.js
     App.test.js
     index.css
-    index.js
-    logo.svg
+    locationList.js
+    locationLists.css
+    mapContainer.js
+    venueCard.js
+    regusterServiceWorker.js
+   
 ```
 
 For the project to build, **these files must exist with exact filenames**:
@@ -77,8 +81,8 @@ This app is using:
 [foursquare API](https://foursquare.com/developers/explore#req=users%2Fself) to fetch information about locations
 [Google Maps](https://enterprise.google.com/intl/en_uk/maps/?utm_source=cpc&utm_medium=google&utm_campaign=2016-geo-emea-endor-gmedia-search-gb-homepage&utm_content=gb%7Cen%7Chybr%7C1001878%7C%7Cbk%7Cbrand%7C%7Chomepage&ds_lpt_start=&ds_lpt_end=&dclid=CLWFqPWRydwCFcq_dwodzfwNnA)
 ### dependencies:
-to render the map: react-googl-maps from npm
-for io elements: semantic- ui -react
+to render the map: react-googl-maps
+for ui elements: semantic- ui -react 
 for search and filter: escape-string-regexp, sort-by
 
 ## Supported Browsers
