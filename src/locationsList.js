@@ -60,14 +60,14 @@ class LocationsList extends Component {
          
             <div >
                 <Header>
-                <Header.Content as='h1' >
+                <Header.Content as='h1' tabIndex="0">
                    Welcome to Tel Aviv
                 </Header.Content>
-                <Button floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
+                <Button aria-label="side-bar-locations" role="toggle"floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
                 </Header>
                 <div className="listContainer">
                 <Sidebar.Pushable as={Segment}>
-                        <Sidebar
+                        <Sidebar tabIndex="0"
                             as={Menu}
                             animation='overlay'
                             icon='labeled'
@@ -77,8 +77,8 @@ class LocationsList extends Component {
                             visible={visible}
                             width='wide'
                         >
-                          <Input inverted
-                        className='search-contacts'
+                          <Input inverted aria-label="filter locations"
+                        className='search-places'
                         type='text'
                         placeholder='filter locations'
                         value={this.state.query}
@@ -88,7 +88,7 @@ class LocationsList extends Component {
                 {/*this shows the filtered results(places) to the screen*/}
                     {
                         showingPlaces.map((location, index) => (
-                            <Menu.Item as='a'key={index} 
+                            <Menu.Item as='a'key={index} tabIndex="0"
                             //the function get the lat lng and marker id 
                             onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
                                 <div className='location-details'>

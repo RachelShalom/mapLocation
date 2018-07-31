@@ -18,7 +18,7 @@ class MapContainer extends Component {
 
    render() {
      let markers=  this.props.locations.map((L,index) => 
-         <Marker key={index} position={L.location}  icon={((this.props.markerId===index)&&'http://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('http://maps.google.com/mapfiles/ms/icons/red-dot.png')}
+         <Marker tabindex={0} key={index} position={L.location} alt="marker" icon={((this.props.markerId===index)&&'http://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('http://maps.google.com/mapfiles/ms/icons/red-dot.png')}
          title={L.title} onClick={() => this.props.onMarkerClick(L.location.lat,L.location.lng,index)}>
          {/*if the index in the state equals to the current Marker index then  show the the info window for this marker*/}
            {(this.props.markerId===index) &&
@@ -46,8 +46,8 @@ class MapContainer extends Component {
       <div>
         <Map
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={ <div style={{ height: `650px`, width: '100%' }} /> }
-          mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }} /> }
+          containerElement={ <div style={{ height: `650px`, width: '100%' }}aria-label="google-maps map" /> }
+          mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }}role="application of map"  /> }
         />
       </div>
    );
