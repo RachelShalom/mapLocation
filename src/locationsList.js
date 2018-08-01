@@ -26,7 +26,7 @@ class LocationsList extends Component {
             markerId: ''
         });
     }
-    //thisfunction hides and make visibke the list of liocations( side bar)
+    //thisfunction hides and make visible the list of locations( side bar)
     handleButtonClick = () => this.setState({ visible: !this.state.visible })
 
      handleSidebarHide = () => this.setState({ visible: false })
@@ -73,7 +73,7 @@ class LocationsList extends Component {
                             animation='overlay'
                             icon='labeled'
                             inverted
-                            onHide={this.handleSidebarHide}
+                            // onHide={this.handleSidebarHide}
                             vertical
                             visible={visible}
                             width='wide'
