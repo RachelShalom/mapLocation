@@ -29,17 +29,20 @@ class LocationsList extends Component {
     //thisfunction hides and make visible the list of locations( side bar)
     handleButtonClick = () => this.setState({ visible: !this.state.visible })
 
-     handleSidebarHide = () => this.setState({ visible: false })
-
     
     //Fetch venue information from foursquare api and chnge the state to the current marker index. 
     //this function is called when user click on the plave name in the list or on the place marker in the map
     fetchVenueDetails = (lat, lng, index) => {
         fetch('https://api.foursquare.com/v2/venues/search?ll=' + lat + ',' + lng
-            + '&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
-        .then(res => res.json()).then(val => {
-            this.setState({ venue: val.response.venues, markerId: index, mapCenter:{lat:lat,lng:lng} })
-        }).catch((e) => console.log(e));
+        + '&&client_id=KKUOPJE5CNANQU4FOS4KDC1ZDX45FQR5JDRQ4KCTBVOVHZCZ&client_secret=ZAVRSOASDD4HPBXHSHZTCW0PCWNJZMGAMW4GUTG2LXQQF0KE&v=20180323')
+            .then(res => {
+                if (!res.ok) { throw new Error('Something went wrong'); }
+                else {
+                    return res.json()
+                }
+            }).then(val => {
+                this.setState({ venue: val.response.venues, markerId: index, mapCenter: { lat: lat, lng: lng } })
+            }).catch((e)=>{{console.log(e)} this.setState({venue: [{id:'0000'}], markerId: index, mapCenter: { lat: lat, lng: lng }})});
     }
     
     render() {

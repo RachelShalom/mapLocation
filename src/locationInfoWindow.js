@@ -26,9 +26,6 @@ class LocationInfoWindow extends Component {
     }
 
 render(){
-
-    console.log(this.state.placeInfo)
-    console.log(typeof this.state.placeInfo,this.state.placeInfo.length )
     if(this.state.isLoaded)
     return( 
        <InfoWindow
