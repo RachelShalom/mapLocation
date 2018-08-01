@@ -26,7 +26,7 @@ class MapContainer extends Component {
          title={L.title} onClick={() => this.props.onMarkerClick(L.location.lat,L.location.lng,index)}>
          {/*if the index in the state equals to the current Marker index then  show the the info window for this marker*/}
            {(this.state.markerId===index) &&
-           <LocationInfoWindow venuesList={this.props.venue} title={L.title }onCloseClick={() => this.props.onInfoWindowClose()} /> 
+           <LocationInfoWindow venuesList={this.props.venue} title={L.title }onCloseClick={this.props.onInfoWindowClose} /> 
            }
          </Marker>
      )

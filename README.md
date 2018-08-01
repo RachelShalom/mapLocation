@@ -26,6 +26,7 @@ my-app/
     locationLists.css
     mapContainer.js
     venueCard.js
+    locationInfoWindow.js
     regusterServiceWorker.js
    
 ```

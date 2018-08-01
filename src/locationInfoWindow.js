@@ -32,7 +32,7 @@ render(){
     if(this.state.isLoaded)
     return( 
        <InfoWindow
-        onCloseClick={() => this.state.onCloseClick()}>
+        onCloseClick={() => this.props.onCloseClick()}>
         <div>
         <span>{this.props.title}</span>
        <Venue placeInfo={this.state.placeInfo}/>
