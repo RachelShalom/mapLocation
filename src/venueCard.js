@@ -12,7 +12,7 @@ class Venue extends Component {
         return (<div>
             {(this.props.placeInfo.length ===1) &&
                 <div>
-                    <p>{this.props.placeInfo[0].name}</p>
+                    {/* <p>{this.props.placeInfo[0].name}</p> */}
                     <p>{this.props.placeInfo[0].categories[0].name}</p>
                     <p>{this.props.placeInfo[0].location.address}</p>
                     <p>{this.props.placeInfo[0].contact.phone}</p>
