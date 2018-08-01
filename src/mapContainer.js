@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import LocationInfoWindow from './locationInfoWindow'
+import ErrorBoundary from './errorBoundary'
 
 
 class MapContainer extends Component {
