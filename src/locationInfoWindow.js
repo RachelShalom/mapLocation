@@ -5,8 +5,9 @@ class LocationInfoWindow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            placeInfo: []
-        }
+            placeInfo: [],
+            isLoaded:false // I added this is order to prevent the info window to render twice. it is rendering twice because fetch in async 
+        }                  // so the first time the window is rendered state.placeInfo is empty and the scond time the window is rendered state.placeInfo is not empty
     }
 
        //fetch information about a place by place id from foursquare API
@@ -20,24 +21,27 @@ class LocationInfoWindow extends Component {
                     return res.json()
                 }
             }).then(val => {
-                this.setState({ placeInfo: [val.response.venue] })
-            }).catch(() => this.setState({ placeInfo: "Sorry no additional info is available" }));
+                this.setState({ placeInfo: [val.response.venue], isLoaded:true })
+            }).catch(() => this.setState({ placeInfo: "Sorry no additional info is available", isLoaded:true }));
     }
 
 render(){
-    {console.log(this.state.placeInfo)}
-    {console.log(typeof this.state.placeInfo,this.state.placeInfo.length )}
+
+    console.log(this.state.placeInfo)
+    console.log(typeof this.state.placeInfo,this.state.placeInfo.length )
+    if(this.state.isLoaded)
     return( 
-        <InfoWindow
-        onCloseClick={() => this.props.onCloseClick()}>
+       <InfoWindow
+        onCloseClick={() => this.state.onCloseClick()}>
         <div>
         <span>{this.props.title}</span>
-        <Venue placeInfo={this.state.placeInfo}/>
+       <Venue placeInfo={this.state.placeInfo}/>
         </div>
       </InfoWindow>
     
     
    );
+   return null;
 }
 
 

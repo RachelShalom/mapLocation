@@ -43,6 +43,7 @@ class LocationsList extends Component {
     }
     
     render() {
+        console.log(this.state.venue);
         const { visible } = this.state;
         let showingPlaces;
         //if the user typed anything the
