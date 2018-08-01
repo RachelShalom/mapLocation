@@ -43,11 +43,13 @@ class MapContainer extends Component {
   
    return(
       <div>
+        <ErrorBoundary>
         <Map
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={ <div style={{ height: `650px`, width: '100%' }}aria-label="google-maps map" /> }
           mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }}role="application"  /> }
         />
+         </ErrorBoundary>
       </div>
    );
   }
