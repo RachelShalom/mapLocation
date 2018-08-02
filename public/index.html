@@ -9,7 +9,13 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=IzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
+    <script type="text/javascript">
+    function gm_authFailure() { 
+      alert("Hi there, sorry but we have an authentication problem with google maps :( please come back later we are working on fixing this issue!");
+     };
+    
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
