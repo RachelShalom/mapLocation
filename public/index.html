@@ -12,18 +12,22 @@
     <script type="text/javascript">
     function gm_authFailure() { 
       alert("Hi there, sorry but we have an authentication problem with google maps :( please come back later we are working on fixing this issue!");
-     };
+    }
+
+    // function mapsCallback(){
+    //   if (typeof google === 'object' && typeof google.maps === 'object') {
+    // }
     
      </script>
 
-    <!-- // <script type="text/javascript">
-    //  function googleError(){
-    //   if(!window.google || !window.google.maps) {
-    //     alert("sorry");
-    //   }
-    //  } 
-    // </script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
+    // <script type="text/javascript">
+     function googleError(){
+      if(!window.google || !window.google.maps) {
+        alert("sorry");
+      }
+     } 
+    // </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4&callback=googleError" async defer></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
@@ -36,7 +40,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Tel Aviv MaP</title>
 </head>
 
 <body>
