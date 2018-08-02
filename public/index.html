@@ -13,21 +13,10 @@
     function gm_authFailure() { 
       alert("Hi there, sorry but we have an authentication problem with google maps :( please come back later we are working on fixing this issue!");
     }
-
-    // function mapsCallback(){
-    //   if (typeof google === 'object' && typeof google.maps === 'object') {
-    // }
+    window.onerror = function(message, source, lineno, colno, error) {alert(message, error);}
     
      </script>
-
-     <script type="text/javascript">
-     function googleError(){
-      if(!window.google || !window.google.maps) {
-        alert("sorry");
-      }
-     } 
-    // </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
+    <script src="htts://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>

@@ -22,8 +22,6 @@ class ErrorBoundary extends Component {
         return (
           <div>
             <h2>Oops Something went wrong. We can't load the map</h2>
-          
-          
           </div>
         );
       }
