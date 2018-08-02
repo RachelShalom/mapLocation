@@ -66,7 +66,7 @@ class LocationsList extends Component {
                 <Header.Content as='h1' tabIndex="0">
                    Welcome to Tel Aviv
                 </Header.Content>
-                <Button floated='left' aria-label="toogle side bar"aria-pressed={this.state.visible} onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
+                <Button floated='left' aria-label="toogle side bar"aria-pressed={this.state.visible} onKeyPress={this.handleButtonClick} onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
                 </Header>
                 <div className="listContainer">
                 <Sidebar.Pushable as={Segment}>
@@ -96,7 +96,7 @@ class LocationsList extends Component {
                         showingPlaces.map((location, index) => (
                             <Menu.Item as='a'key={index} tabIndex="0"
                             //the function get the lat lng and marker id 
-                            onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
+                            onClick={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)} onKeyPress={()=>this.fetchVenueDetails(location.location.lat,location.location.lng,index)}>
                                 <div className='location-details'>
                                 <List.Header >{location.title}</List.Header>
                                 </div>
