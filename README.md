@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## About this porject
 
 This is a final project at Udacity Frontend nano-degree. the porject is in react and present a map with predefined locations that the uder can
-interact with
+interact with.
 
 
 
@@ -28,6 +28,7 @@ my-app/
     venueCard.js
     locationInfoWindow.js
     regusterServiceWorker.js
+    errorBoundary.js
    
 ```
 
@@ -51,6 +52,7 @@ They will not be included in the production build so you can use them for things
 
 In the project directory, you can run:
 
+### `npm install`( this is to install all the dependencies in the project)
 ### `npm start`
 
 Runs the app in the development mode.<br>
