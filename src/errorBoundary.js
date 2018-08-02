@@ -21,11 +21,8 @@ class ErrorBoundary extends Component {
         // Error path
         return (
           <div>
-            <h2>Oops Something went wrong. We would not load the map</h2>
+            <h2>Oops Something went wrong. We can't load the map</h2>
           
-              {this.state.error && this.state.error.toString()}
-              <br />
-              {this.state.errorInfo.componentStack}
           
           </div>
         );
