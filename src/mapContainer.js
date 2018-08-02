@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 import {withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import LocationInfoWindow from './locationInfoWindow'
-import ErrorBoundary from './errorBoundary'
-
 
 class MapContainer extends Component {
 
@@ -21,6 +19,10 @@ class MapContainer extends Component {
     }
   }
 
+  componentDidCatch(err, info){
+    alert('sorry problem');
+  }
+
    render() {
      let markers=  this.props.locations.map((L,index) => 
          <Marker tabindex={0} key={index} position={L.location} alt="marker" icon={((this.props.markerId===index)&&'http://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('http://maps.google.com/mapfiles/ms/icons/red-dot.png')}
@@ -31,8 +33,7 @@ class MapContainer extends Component {
            }
          </Marker>
      )
-     const Map = withGoogleMap(props => 
-      
+     const Map = withGoogleMap(props =>
        <GoogleMap
          center={this.state.center}
          defaultZoom={13}>
@@ -46,7 +47,7 @@ class MapContainer extends Component {
         
         <Map
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={ <div style={{ height: `650px`, width: '100%' }}aria-label="google-maps map" /> }
+          containerElement={ <div className="mapcontainer"style={{ height: `650px`, width: '100%' }}aria-label="google-maps map" /> }
           mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }}role="application"  /> }
         />
       </div>

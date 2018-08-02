@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LocationsList from './locationsList';
+import ErrorBoundary from './errorBoundary'
 
 class App extends Component {
   state={
@@ -22,8 +23,11 @@ class App extends Component {
     return (
       <div className="App">
         <main>
+        <ErrorBoundary>
+
         <LocationsList locations={this.state.locations}/>
-      
+        </ErrorBoundary>
+
         </main>
         
       </div>

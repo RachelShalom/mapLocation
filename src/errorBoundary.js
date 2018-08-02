@@ -21,7 +21,7 @@ class ErrorBoundary extends Component {
         // Error path
         return (
           <div>
-            <h2>OOPs Something went wrong.</h2>
+            <h2>OOPs Something went wrong. We would not load the map</h2>
             <details style={{ whiteSpace: 'pre-wrap' }}>
               {this.state.error && this.state.error.toString()}
               <br />
