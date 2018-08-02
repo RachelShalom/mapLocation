@@ -32,24 +32,23 @@ class MapContainer extends Component {
          </Marker>
      )
      const Map = withGoogleMap(props => 
+      
        <GoogleMap
          center={this.state.center}
          defaultZoom={13}>
          {/* Add the Markers to the map */}
          {markers}
        </GoogleMap>
-
      );
   
    return(
       <div>
-        <ErrorBoundary>
+        
         <Map
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={ <div style={{ height: `650px`, width: '100%' }}aria-label="google-maps map" /> }
           mapElement={ <div className="mapElement" style={{ height: `100%`, width:'100%' }}role="application"  /> }
         />
-         </ErrorBoundary>
       </div>
    );
   }
