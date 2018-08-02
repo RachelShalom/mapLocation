@@ -19,9 +19,6 @@ class MapContainer extends Component {
     }
   }
 
-  componentDidCatch(err, info){
-    alert('sorry problem');
-  }
 
    render() {
      let markers=  this.props.locations.map((L,index) => 

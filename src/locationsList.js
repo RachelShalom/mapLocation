@@ -1,4 +1,3 @@
-/*global google*/
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import MapContainer from "./mapContainer"
@@ -47,7 +46,6 @@ class LocationsList extends Component {
     }
     
     render() {
-        console.log(this.state.venue);
         const { visible } = this.state;
         let showingPlaces;
         //if the user typed anything the
@@ -68,7 +66,7 @@ class LocationsList extends Component {
                 <Header.Content as='h1' tabIndex="0">
                    Welcome to Tel Aviv
                 </Header.Content>
-                <Button floated='left' onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
+                <Button floated='left' aria-label="toogle side bar"aria-pressed={this.state.visible} onClick={this.handleButtonClick} basic> <Icon size ="large" name='list' /></Button>
                 </Header>
                 <div className="listContainer">
                 <Sidebar.Pushable as={Segment}>
