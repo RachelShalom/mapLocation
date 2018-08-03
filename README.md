@@ -74,6 +74,7 @@ npm run build creates a build directory with a production build of your app. Set
 for environments using Node, the easiest way to handle this would be to install serve and let it handle the rest:
 
 npm install -g serve
+serve -s build
 The last command shown above will serve your static site on the [port 5000](http://localhost:5000/)
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 ### used API's:
