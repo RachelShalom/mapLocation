@@ -5,7 +5,7 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import './locationsLists.css';
 import ErrorBoundary from './errorBoundary'
-import { List, Input, Segment, Container,Button, Header, Icon, Image, Menu, Sidebar } from 'semantic-ui-react'
+import { List, Input, Segment, Button, Header, Icon, Menu, Sidebar } from 'semantic-ui-react'
 class LocationsList extends Component {
     state = {
         query: '',
