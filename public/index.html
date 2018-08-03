@@ -10,12 +10,13 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
     <script type="text/javascript">
-    function gm_authFailure() { 
-      alert("Hi there, sorry but we have an authentication problem with google maps :( please come back later we are working on fixing this issue!");
-    }
-    window.onerror = function(message, source, lineno, colno, error) {alert("soory we can't load the map", message);}
-    
-     </script>
+        function gm_authFailure() {
+            alert("Hi there, sorry but we have an authentication problem with google maps :( please come back later we are working on fixing this issue!");
+        }
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert("Sorry we can't load the map", message);
+        }
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BZAjIEzmJEbgfMmPQv7C5-fXOOt9IN4" async defer></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
