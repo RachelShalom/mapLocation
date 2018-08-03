@@ -68,13 +68,14 @@ The service worker is only enabled in the production environment, e.g. the outpu
 If you need to test your offline-first service worker locally, build the application (using npm run build) and run a simple http server from your build directory. After running the build script, create-react-app will give instructions for one way to test your production build locally and the deployment instructions have instructions for using other methods. Be sure to always use an incognito window to avoid complications with your browser cache.
 
 ###Deployment
-npm run build creates a build directory with a production build of your app. Set up your favourite HTTP server so that a visitor to your site is served index.html, and requests to static paths like /static/js/main.<hash>.js are served with the contents of the /static/js/main.<hash>.js file.
+##### npm run build 
+creates a build directory with a production build of your app. Set up your favourite HTTP server so that a visitor to your site is served index.html, and requests to static paths like /static/js/main.<hash>.js are served with the contents of the /static/js/main.<hash>.js file.
 
 ###Static Server
 for environments using Node, the easiest way to handle this would be to install serve and let it handle the rest:
 
-npm install -g serve,
-serve -s build
+##### npm install -g serve
+##### serve -s build
 The last command shown above will serve your static site on the [port 5000](http://localhost:5000/)
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 ### used API's:
