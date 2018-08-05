@@ -1,6 +1,6 @@
 {
     "name": "locations_map",
-    "homepage": "https://RachelShalom.github.io/mapLocation",
+    "homepage": "http://RachelShalom.github.io/mapLocation",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
