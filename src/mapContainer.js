@@ -22,7 +22,7 @@ class MapContainer extends Component {
 
    render() {
      let markers=  this.props.locations.map((L,index) => 
-         <Marker tabindex={0} key={index} position={L.location} alt="marker" icon={((this.props.markerId===index)&&'http://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('http://maps.google.com/mapfiles/ms/icons/red-dot.png')}
+         <Marker tabindex={0} key={index} position={L.location} alt="marker" icon={((this.props.markerId===index)&&'https://maps.google.com/mapfiles/ms/icons/blue-dot.png')||('https://maps.google.com/mapfiles/ms/icons/red-dot.png')}
          title={L.title} onClick={() => this.props.onMarkerClick(L.location.lat,L.location.lng,index)}>
          {/*if the index in the state equals to the current Marker index then  show the the info window for this marker*/}
            {(this.state.markerId===index) &&
