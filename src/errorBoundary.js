@@ -20,21 +20,13 @@ class ErrorBoundary extends Component {
     render() {
       if (this.state.errorInfo) {
         return (
-        <div> 
-          <div className="message">Oops something went wrong please refresh and try again</div>
-          <div className="morty">
-            <div className="hair"></div>
-            <div className="ears"></div>
-            <div className="face"></div>
-            <div className="eyes"></div>
-            <div className="nose"></div>
-            <div className="mouth"></div>
-            <div className="lines"></div>
-          </div>
+        <div className="flex"> 
+            <div className="element-center">
+              <img src="https://source.unsplash.com/OI2Yqj7GDy0" className="example-center-figure" style="border-radius: 123"></img>
+              <h1>Oops we have a problem please refresh</h1>
+            </div>
         </div>)
-      }
-      
-      
+      } 
      // Normally, just render children
       return this.props.children;
     }  
