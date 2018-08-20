@@ -21,7 +21,7 @@ class ErrorBoundary extends Component {
       if (this.state.errorInfo) {
         return (
         <div> 
-          <h2>Oops something went wrong please refresh and try again</h2>
+          <div className="message">Oops something went wrong please refresh and try again</div>
           <div className="morty">
             <div className="hair"></div>
             <div className="ears"></div>
