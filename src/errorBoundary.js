@@ -20,12 +20,17 @@ class ErrorBoundary extends Component {
     render() {
       if (this.state.errorInfo) {
         return (
-        <div className="flex"> 
-            <div className="element-center">
-              <img src="https://source.unsplash.com/OI2Yqj7GDy0" className="example-center-figure" style="border-radius: 123"></img>
-              <h1>Oops we have a problem please refresh</h1>
+          <section>
+            <div class="container">
+              <div class="child-elem">
+                <h1>uh uh we have a small issue</h1>
+              </div>
+              <div class="child-elem">
+               please refresh the page the map will appear:)
+              </div>
             </div>
-        </div>)
+          </section>
+        )
       } 
      // Normally, just render children
       return this.props.children;

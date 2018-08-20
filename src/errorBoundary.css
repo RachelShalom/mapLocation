@@ -1,34 +1,55 @@
-h1 {
-  margin: 0;
-  color: #fdfdfd;
-  font-size: 30px;
-  font-weight: 400;
+section {
+  width:100%;
+  height:100%;
+  
+  /* Flex initialised */
+  display:flex;
+  background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+  
+  /* Does not distribute equal height with default value 'stretch' */
+  align-items:center;
+}
+.container {
+  width:90%;
+  height:100%;
+  max-width:450px;
+ 
+  margin:0 auto;
+  padding:40px;
+  box-shadow:0px 0px 5px rgba(0,0,0,0.3);
   text-align:center;
-  margin-top: 50px;
+  transform: scale(1);
+  border-radius:20px;
+  
+  /* Flex initialised */
+  display:flex;
+  
+  /* Makes children wrap whole width. Used with flex-basis:100% on child-elements. */
+  flex-wrap:wrap;
+  
+  /* Does not distribute equal height with default value 'stretch' */
+  align-content:center;
 }
-.flex {
-background: #fdfdfd;
-display: flex;
-flex-wrap:wrap;
-min-height:550px;
-justify-content: center;
-align-items:center;
-max-width:800px;
-margin: 0 auto;
-margin-top: 70px;
-border-radius:5px;
+
+.container:hover {
+  box-shadow:0px 4px 20px -8px rgba(0,0,0,0.3);
+  background:#fff;
+  transform: scale(1.06);
+  cursor:pointer;
 }
-.element-center {
-display: flex;
-flex-direction:column;
-justify-content: center;
+
+.child-elem {
+  
+  /* Makes children elements have a width of 100%, prevents auto width-sizing from flex */
+  flex-basis:100%;
 }
-.element-center h1 {
-color:#333;
-margin-top: 10px;
-font-size:24px;
-}
-.flex img {
-width:100px;
-margin: 0 auto;
+
+/******** OTHER ELEMENTS + ANIMATIONS *********/
+
+.container {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
