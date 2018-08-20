@@ -78,6 +78,9 @@ for environments using Node, the easiest way to handle this would be to install 
 ##### serve -s build
 The last command shown above will serve your static site on the [port 5000](http://localhost:5000/)
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
+### you can see the website hosted in github pages [here](https://rachelshalom.github.io/mapLocation/)
+
 ### used API's:
 
 This app is using:
