@@ -4,7 +4,6 @@ import MapContainer from "./mapContainer"
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import './locationsLists.css';
-import ErrorBoundary from './errorBoundary'
 import { List, Input, Segment, Button, Header, Icon, Menu, Sidebar } from 'semantic-ui-react'
 class LocationsList extends Component {
     state = {
@@ -105,11 +104,10 @@ class LocationsList extends Component {
                     }
               </Sidebar>
                 <div className="mapContainer">
-                <ErrorBoundary>
+               
                 <MapContainer locations={showingPlaces} onInfoWindowClose={this.handleInfoWindowClose}
                 onMarkerClick={this.fetchVenueDetails}
                  markerId={this.state.markerId} venue={this.state.venue} mapCenter={this.state.mapCenter}/>
-                </ErrorBoundary>
                  </div>
             
                  </Sidebar.Pushable>

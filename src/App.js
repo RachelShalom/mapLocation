@@ -21,16 +21,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <main>
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <div className="App">
+          <main>
 
-        <LocationsList locations={this.state.locations}/>
-        </ErrorBoundary>
+            <LocationsList locations={this.state.locations} />
+          </main>
 
-        </main>
-        
-      </div>
+        </div>
+      </ErrorBoundary>
     );
   }
 }
